@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: airline-payments-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: airline-payments
+    spec:
+      containers:
+        - name: airline-payments-pod
+          image: airline-payments:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8081
+  selector:
+    matchLabels:
+       app: airline-payments

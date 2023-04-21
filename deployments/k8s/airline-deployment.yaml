@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: airline-project-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: airline-project
+    spec:
+      containers:
+        - name: airline-project-pod
+          image: airline-project:latest
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: SPRING_DATASOURCE_URL
+              value: jdbc:postgresql://db-service:5432/postgres
+            - name: SPRING_DATASOURCE_USERNAME
+              value: postgres
+            - name: SPRING_DATASOURCE_PASSWORD
+              value: postgres
+            - name: SPRING_JPA_HIBERNATE_DDL_AUTO
+              value: validate
+          ports:
+            - containerPort: 8080
+  selector:
+    matchLabels:
+       app: airline-project
