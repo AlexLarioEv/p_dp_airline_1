@@ -1,0 +1,1558 @@
+{
+	"info": {
+		"_postman_id": "4b21ce25-0bbc-4549-b17f-f9667164b800",
+		"name": "p_dp_airline_1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26218033"
+	},
+	"item": [
+		{
+			"name": "Booking",
+			"item": [
+				{
+					"name": "Get  All Booking",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/bookings",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"bookings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create New Booking",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 0,\r\n  \"bookingNumber\": \"BK-111111\",\r\n  \"bookingData\": \"2023-01-20T17:02:05.003992\",\r\n  \"passenger\": {\r\n    \"@type\": \"passenger\",\r\n    \"id\": 0,\r\n    \"email\": \"user13@mail.ru\",\r\n    \"password\": \"$2a$12$XTtAr5.9Lg3PDFJuseBleOFNBFFKoyK4d6CW96VVYXm/X4eYDPHsa\",\r\n    \"securityQuestion\": null,\r\n    \"answerQuestion\": null,\r\n    \"roles\": [],\r\n    \"firstName\": \"Юзер13\",\r\n    \"lastName\": \"Юзеров\",\r\n    \"birthDate\": \"1982-03-12\",\r\n    \"phoneNumber\": \"79101111118\",\r\n    \"passport\": null\r\n  },\r\n  \"flight\": {\r\n    \"id\": 0,\r\n    \"code\": \"NALVKO\",\r\n    \"from\": null,\r\n    \"to\": null,\r\n    \"departureDateTime\": \"2023-01-20T17:02:04.942362\",\r\n    \"arrivalDateTime\": \"2023-01-20T17:02:04.942362\",\r\n    \"aircraft\": null,\r\n    \"flightStatus\": \"ON_TIME\"\r\n  },\r\n  \"category\": {\r\n    \"id\": 5002,\r\n    \"categoryType\": \"ECONOMY\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/bookings",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"bookings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Booking by ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 0,\r\n  \"bookingNumber\": \"BK-777777\",\r\n  \"bookingData\": \"2023-01-20T17:02:05.003992\",\r\n  \"passenger\": {\r\n    \"@type\": \"passenger\",\r\n    \"id\": 0,\r\n    \"email\": \"user13@mail.ru\",\r\n    \"password\": \"$2a$12$XTtAr5.9Lg3PDFJuseBleOFNBFFKoyK4d6CW96VVYXm/X4eYDPHsa\",\r\n    \"securityQuestion\": null,\r\n    \"answerQuestion\": null,\r\n    \"roles\": [],\r\n    \"firstName\": \"Юзер13\",\r\n    \"lastName\": \"Юзеров\",\r\n    \"birthDate\": \"1982-03-12\",\r\n    \"phoneNumber\": \"79101111118\",\r\n    \"passport\": null\r\n  },\r\n  \"flight\": {\r\n    \"id\": 0,\r\n    \"code\": \"NALVKO\",\r\n    \"from\": null,\r\n    \"to\": null,\r\n    \"departureDateTime\": \"2023-01-20T17:02:04.942362\",\r\n    \"arrivalDateTime\": \"2023-01-20T17:02:04.942362\",\r\n    \"aircraft\": null,\r\n    \"flightStatus\": \"ON_TIME\"\r\n  },\r\n  \"category\": {\r\n    \"id\": 5002,\r\n    \"categoryType\": \"ECONOMY\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/bookings/1",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"bookings",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Booking by ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/bookings/1",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"bookings",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Booking by ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/bookings/2",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"bookings",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Booking by Number",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/bookings/number?bookingNumber=BK-111111",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"bookings",
+								"number"
+							],
+							"query": [
+								{
+									"key": "bookingNumber",
+									"value": "BK-111111"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "AccountController",
+			"item": [
+				{
+					"name": "Get all accounts",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/accounts",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"accounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get account by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/accounts/1",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"accounts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get authenticated account",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/accounts/auth",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"accounts",
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add account",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"@type\": \"passenger\",\r\n        \"email\": \"use255@mail.ru\",\r\n        \"password\": \"$2a$10$3NirK3T6cYWgR5NkJCQgSezPH7JfsDGCCAd/fE.5sAKiRiWlXbKiG\",\r\n        \"securityQuestion\": \"вопрос 24\",\r\n        \"answerQuestion\": \"$2a$10$0GsheYeivQ5GLbB/OC9UCO7SRXyU1Gp1hP1uiT38Dyi/RyPjHZfaO\",\r\n        \"roles\": [\r\n            {\r\n                \"id\": 2,\r\n                \"name\": \"ROLE_PASSENGER\"\r\n            }\r\n        ],\r\n        \"firstName\": \"Юзер24\",\r\n        \"lastName\": \"Юзерова\",\r\n        \"birthDate\": \"1993-09-20\",\r\n        \"phoneNumber\": \"79101111129\",\r\n        \"passport\": {\r\n            \"middleName\": \"Юзеровна\",\r\n            \"gender\": \"female\",\r\n            \"serialNumberPassport\": \"1321 111129\",\r\n            \"passportIssuingDate\": \"2008-09-19\",\r\n            \"passportIssuingCountry\": \"Россия\"\r\n        }\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/accounts",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"accounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update account",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"@type\": \"passenger\",\r\n    \"id\": 0,\r\n    \"email\": \"user150@mail.ru\",\r\n    \"password\": \"100\",\r\n    \"securityQuestion\": \"вопрос 15\",\r\n    \"answerQuestion\": \"ответ 49\",\r\n    \"roles\": [\r\n        {\r\n            \"id\": 0,\r\n            \"name\": \"ROLE_PASSENGER\"\r\n        }\r\n    ],\r\n    \"firstName\": \"Юзер15\",\r\n    \"lastName\": \"Юзерова\",\r\n    \"birthDate\": \"1987-03-30\",\r\n    \"phoneNumber\": \"79101111120\",\r\n    \"passport\": {\r\n        \"middleName\": \"Юзеровна\",\r\n        \"gender\": \"female\",\r\n        \"serialNumberPassport\": \"1111 111120\",\r\n        \"passportIssuingDate\": \"2004-04-20\",\r\n        \"passportIssuingCountry\": \"Россия\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/accounts/15",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"accounts",
+								"15"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete account by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/accounts/3",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"accounts",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{ACCESS_TOKEN}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "DestinationRestController",
+			"item": [
+				{
+					"name": "Create new Destination",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"airportCode\": \"AER\",\r\n        \"airportName\": \"Мигалово\",\r\n        \"cityName\": \"Тверь\",\r\n        \"timezone\": \"GMT +3\",\r\n        \"countryName\": \"Россия\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/destinations/",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"destinations",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get list of all Destination",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/destinations",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"destinations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gets list of Destination by cityName or countryName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/destinations/filter?cityName=Петропавловск",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"destinations",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "cityName",
+									"value": "Петропавловск"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gets list of Destination by cityName or countryName Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/destinations/filter?countryName=Россия",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"destinations",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "countryName",
+									"value": "Россия"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Destination by id",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": 2,\r\n        \"airportCode\": \"PKC\",\r\n        \"airportName\": \"Елизово\",\r\n        \"cityName\": \"Петропавловск\",\r\n        \"timezone\": \"Россия\",\r\n        \"countryName\": \"GMT +3\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/destinations/2",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"destinations",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete destination by \"id\\\"",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/destinations/1008",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"destinations",
+								"1008"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SeatRestController",
+			"item": [
+				{
+					"name": "Get Seat by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/seats/1",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"seats",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create new Seat",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"seatNumber\": \"33C\",\r\n    \"isNearEmergencyExit\": false,\r\n    \"isLockedBack\": false,\r\n    \"category\": {\r\n        \"id\": 3,\r\n        \"categoryType\": \"PREMIUM_ECONOMY\"\r\n    },\r\n    \"aircraftId\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/seats",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"seats"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Seat by id",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"seatNumber\": \"35F\",\r\n    \"isNearEmergencyExit\": false,\r\n    \"isLockedBack\": false,\r\n    \"category\": {\r\n        \"id\": 4,\r\n        \"categoryType\": \"ECONOMY\"\r\n    },\r\n    \"aircraftId\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/seats/1",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"seats",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Seat by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/seats/1000",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"seats",
+								"1000"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Seats by aircraft id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/seats/aircraft/2",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"seats",
+								"aircraft",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Seats by aircraft id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"seatNumber\": \"43E\",\r\n        \"isNearEmergencyExit\": false,\r\n        \"isLockedBack\": true,\r\n        \"category\": {\r\n            \"id\": 3,\r\n            \"categoryType\": \"PREMIUM_ECONOMY\"\r\n        },\r\n        \"aircraftId\": 2\r\n    },\r\n    {\r\n        \"seatNumber\": \"65F\",\r\n        \"isNearEmergencyExit\": false,\r\n        \"isLockedBack\": true,\r\n        \"category\": {\r\n            \"id\": 4,\r\n            \"categoryType\": \"ECONOMY\"\r\n        },\r\n        \"aircraftId\": 2\r\n    },\r\n    {\r\n        \"seatNumber\": \"54A\",\r\n        \"isNearEmergencyExit\": true,\r\n        \"isLockedBack\": true,\r\n        \"category\": {\r\n            \"id\": 2,\r\n            \"categoryType\": \"BUSINESS\"\r\n        },\r\n        \"aircraftId\": 2\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/seats/aircraft/2",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"seats",
+								"aircraft",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "AircraftRestController",
+			"item": [
+				{
+					"name": "Get list of all Aircraft",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/aircrafts",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"aircrafts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Aircraft by it's \"id\"",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/aircrafts/1",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"aircrafts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create new Aircraft",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"aircraftNumber\": \"2128506\",\r\n    \"model\": \"SuperJet 100-95LR\",\r\n    \"modelYear\": 2020,\r\n    \"flightRange\": 4578\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/aircrafts",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"aircrafts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Aircraft by \"id\"",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"aircraftNumber\": \"2128506\",\r\n    \"model\": \"SuperJet 100-95LR\",\r\n    \"modelYear\": 2222,\r\n    \"flightRange\": 5555\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/aircrafts/1",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"aircrafts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Aircraft by \"id\"",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/aircrafts/1",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"aircrafts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "FlightRestController",
+			"item": [
+				{
+					"name": "Get Free Seats by Flight ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{HOST}}/seats/1",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"seats",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Flight by ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/flights/1",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"flights",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Flights By From And To And Dates",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"from\": {\r\n        \"id\": 1,\r\n        \"airportCode\": \"VKO\",\r\n        \"airportName\": \"Внуково\",\r\n        \"cityName\": \"Москва\",\r\n        \"timezone\": \"Россия\",\r\n        \"countryName\": \"GMT +3\"\r\n    },\r\n    \"to\": {\r\n        \"id\": 4,\r\n        \"airportCode\": \"OMS\",\r\n        \"airportName\": \"Омск\",\r\n        \"cityName\": \"Омск\",\r\n        \"timezone\": \"Россия\",\r\n        \"countryName\": \"GMT +6\"\r\n    },\r\n    \"departureDateTime\": \"2023-03-09T21:46:48.228593\",\r\n    \"arrivalDateTime\": \"2023-03-09T21:46:48.228593\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/flights/filter?from=Воронеж&to=Москва&date_start=2022-11-30T16:05:00&date_finish=2022-11-30T14:40:00",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"flights",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "from",
+									"value": "Воронеж"
+								},
+								{
+									"key": "to",
+									"value": "Москва"
+								},
+								{
+									"key": "date_start",
+									"value": "2022-11-30T16:05:00"
+								},
+								{
+									"key": "date_finish",
+									"value": "2022-11-30T14:40:00"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Flight By ID And Dates",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/flights/filter/dates?id=5&date_start=2022-11-30T22:30:00&date_finish=2022-11-30T18:25:00",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"flights",
+								"filter",
+								"dates"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "5"
+								},
+								{
+									"key": "date_start",
+									"value": "2022-11-30T22:30:00"
+								},
+								{
+									"key": "date_finish",
+									"value": "2022-11-30T18:25:00"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Flight Status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/flights/status",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"flights",
+								"status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Flight",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\": \"VKOOMS\",\r\n    \"from\": {\r\n        \"id\": 1,\r\n        \"airportCode\": \"VKO\",\r\n        \"airportName\": \"Внуково\",\r\n        \"cityName\": \"Москва\",\r\n        \"timezone\": \"Россия\",\r\n        \"countryName\": \"GMT +3\"\r\n    },\r\n    \"to\": {\r\n        \"id\": 4,\r\n        \"airportCode\": \"OMS\",\r\n        \"airportName\": \"Омск\",\r\n        \"cityName\": \"Омск\",\r\n        \"timezone\": \"Россия\",\r\n        \"countryName\": \"GMT +6\"\r\n    },\r\n    \"departureDateTime\": \"2023-03-09T21:46:48.228593\",\r\n    \"arrivalDateTime\": \"2023-03-09T21:46:48.228593\",\r\n    \"aircraftId\": 1,\r\n    \"flightStatus\": \"ON_TIME\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/flights",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"flights"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Flight",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\": \"VKOOMS\",\r\n    \"from\": {\r\n        \"id\": 1,\r\n        \"airportCode\": \"VKO\",\r\n        \"airportName\": \"Внуково\",\r\n        \"cityName\": \"Москва\",\r\n        \"timezone\": \"Россия\",\r\n        \"countryName\": \"GMT +3\"\r\n    },\r\n    \"to\": {\r\n        \"id\": 4,\r\n        \"airportCode\": \"OMS\",\r\n        \"airportName\": \"Омск\",\r\n        \"cityName\": \"Омск\",\r\n        \"timezone\": \"Россия\",\r\n        \"countryName\": \"GMT +6\"\r\n    },\r\n    \"departureDateTime\": \"2023-03-09T21:46:48.228593\",\r\n    \"arrivalDateTime\": \"2023-03-09T21:46:48.228593\",\r\n    \"aircraftId\": 1,\r\n    \"flightStatus\": \"DELAYED\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/flights/1",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"flights",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Booking by ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/flights/10",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"flights",
+								"10"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{ACCESS_TOKEN}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "FlightSeatRestController",
+			"item": [
+				{
+					"name": "Get FlightSeat by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/flight-seats/2",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"flight-seats",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get list FlightSeat by code of Flight",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/flight-seats/all-flight-seats/1",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"flight-seats",
+								"all-flight-seats",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit FlightSeat by \"id\"",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"fare\": 650,\r\n    \"isRegistered\": false,\r\n    \"isSold\": false,\r\n    \"isBooking\": null,\r\n    \"flightId\": 1,\r\n    \"seatId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/flight-seats/2",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"flight-seats",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete FlightSeat by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/flight-seats/1002",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"flight-seats",
+								"1002"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add FlightSeat by ID of Flight",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"fare\": 550,\r\n    \"isRegistered\": true,\r\n    \"isSold\": true,\r\n    \"isBooking\": null,\r\n    \"flightId\": 1,\r\n    \"seatId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/flight-seats/all-flight-seats/1",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"flight-seats",
+								"all-flight-seats",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "login to get token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"admin@mail.ru\",\r\n    \"password\": \"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBtYWlsLnJ1IiwiZXhwIjoxNjc1NDAxMTk1LCJyb2xlcyI6W3siaWQiOjEsIm5hbWUiOiJST0xFX0FETUlOIn1dfQ.TnFSi8Or2EWgAooSE5W7_rVL_H_6Rstk4pYLuuZfP0Bhq1F0JVuvX0FqrgP_vrltfBKcAve--9rm8WjezGIEOQ",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"const usernameAndPassword = {",
+					"    username: pm.collectionVariables.get(\"userName\"),",
+					"    password: pm.collectionVariables.get(\"userPassword\")",
+					"};",
+					"",
+					"const requestForToken = {",
+					"    url: 'http://localhost:8080/api/auth/login',",
+					"    method: 'POST',",
+					"    header: 'Content-Type: application/json',",
+					"    body: {",
+					"        mode: 'raw',",
+					"        raw: JSON.stringify(usernameAndPassword)",
+					"    }",
+					"};",
+					"",
+					"pm.sendRequest(requestForToken, (err, res) => {",
+					"    const {accessToken, refreshToken} = res.json();",
+					"",
+					"    console.log(res.json());",
+					"",
+					"    pm.collectionVariables.set(\"ACCESS_TOKEN\", accessToken);",
+					"    pm.collectionVariables.set(\"REFRESH_TOKEN\", refreshToken);",
+					"});"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "userName",
+			"value": "admin@mail.ru",
+			"type": "string"
+		},
+		{
+			"key": "userPassword",
+			"value": "admin",
+			"type": "string"
+		},
+		{
+			"key": "HOST",
+			"value": "http://localhost:8080/api",
+			"type": "string"
+		},
+		{
+			"key": "ACCESS_TOKEN",
+			"value": ""
+		},
+		{
+			"key": "REFRESH_TOKEN",
+			"value": ""
+		}
+	]
+}
