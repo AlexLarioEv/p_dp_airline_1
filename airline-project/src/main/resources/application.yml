@@ -1,0 +1,69 @@
+server:
+  port: 8080
+  servlet:
+    session:
+      timeout: -1
+
+#name of Spring active profile is linked with log4j2 logging configuration name of file as log4j2-spring_active_profile_name.yaml.
+#there are log4j2-dev.yaml and log4j2-prod.yaml configuration files now available for corresponding
+#profiles: dev - only LogToConsole, prod - LogToRollingFile + LogToConsole
+spring:
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.xml
+  application:
+    name: app
+  profiles:
+    active: dev
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/airline_db?useUnicode=yes&characterEncoding=UTF-8&serverTimezone=Europe/Moscow
+    username: root
+    password: root
+    hikari:
+      leak-detection-threshold: 60000
+      maximum-pool-size: 20
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        storage_engine: innodb
+        current_session_context_class: org.springframework.orm.hibernate5.SpringSessionContext
+        format_sql: true
+        jdbc:
+          time_zone: Europe/Moscow
+        cache:
+          use_second_level_cache: true
+          region:
+            factory_class: org.hibernate.cache.ehcache.EhCacheRegionFactory
+          ehcache:
+            missing_cache_strategy: create
+  mail:
+    host: smtp.yandex.ru
+    port: 465
+    username: XXXX
+    password: XXXX
+
+    protocol: smtps
+jwt:
+  secret:
+    access: QZnCUVCnP3aukiTOa8XxPkfHODqpXB9xkg/o72yhIh4GE3BPiZszU4fYjJZTbcUcyGM/Bb5N81rv9Csq7blwCA==
+    refresh: 7OTNSWG1vNDf0tgRcVBAFIq6nUlA4QajZUCqn2hpQs1oVKg1qjxB9l9Ik8NltL2QIM6HJYZg8V6zyHJgP0BHEg==
+  refreshExpiration:
+    accessTokeMin: 10
+    refreshTokeDays: 15
+
+mail:
+  debug: true
+
+notification:
+  periodOfDbCheck:
+    milliseconds: 10000
+  beforeDeparture:
+    seconds: 86400
+
+logging:
+  config: classpath:log4j2-${spring.profiles.active}.yaml
+
